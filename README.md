@@ -1,10 +1,10 @@
 # Anything
 
-A collection of helper methods like: `anything`, `any_number`, `any_string` that is useful to test nested data structures (like arrays or hashes) when you care more about the some particular elements and the "shape" of the data than about the entire thing.
+Anything is a collection of helper methods like: `anything`, `any_number`, `any_string` that is useful to test nested data structures (like arrays or hashes) when you care more about some particular elements and the "shape" of the data, than about the entire data structure.
 
 So, instead of either:
 
-1. Asserting all elements, even the attributes you don't really care about (ids, created_at fields etc)
+* Asserting all elements, even the attributes you don't really care about (ids, created_at fields etc)
 
 ```ruby
 def test_create
@@ -22,7 +22,7 @@ end
 
 or
 
-2. Extracting out subset of attributes you care about:
+* Extracting out subset of attributes you care about:
 
 ```ruby
 def test_create
@@ -74,6 +74,8 @@ class Test < Minitest::Test
   end
 end
 ```
+
+See: https://github.com/wojtekmach/anything/blob/master/test/anything_test.rb for more examples.
 
 ## Installation
 
