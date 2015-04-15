@@ -102,20 +102,9 @@ See: https://github.com/wojtekmach/anything/blob/master/test/anything_test.rb fo
 
 ## Installation
 
-Add this line to your application's Gemfile:
+The gem is not released to rubygems.org yet, since this name is taken.
 
-```ruby
-gem 'anything'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install anything
-
+You can install it via bundler by adding `gem 'anything', github: 'wojtekmach/anything'` to your Gemfile or by cloning it and running `rake install`.
 
 ## Development
 
