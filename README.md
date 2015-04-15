@@ -75,6 +75,27 @@ class Test < Minitest::Test
 end
 ```
 
+### Composition
+
+You can compose helpers like this:
+
+```ruby
+acronym = upcase_string ^ string_of_length(3)
+
+acronym == "NBA"  # => true
+acronym == "nba"  # => false
+acronym == "NASA" # => false
+```
+
+And like that for arrays:
+
+```ruby
+array_of_integers = array_of(any_integer)
+
+array_of_integers == [1, 2, 3]   # => true
+array_of_integers == [1, nil, 3] # => false
+```
+
 See: https://github.com/wojtekmach/anything/blob/master/test/anything_test.rb for more examples.
 
 ## Installation
