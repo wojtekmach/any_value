@@ -71,7 +71,6 @@ require 'minitest/autorun'
 class Test < Minitest::Test
   def test_anything
     assert_equal any_number, 42
-    assert_equal any_number, 42
   end
 end
 ```
