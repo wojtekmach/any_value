@@ -127,6 +127,9 @@ module Anything
     StringOfLength.new(expected_length)
   end
 
+  # It's the same as:
+  #
+  # sorted_array = array_of(increasing)
   class SortedArray < Anything
     def ==(o)
       o == o.sort
