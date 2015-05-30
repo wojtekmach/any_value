@@ -1,4 +1,5 @@
 require "test_helper"
+require "securerandom"
 
 class AnythingTest < Minitest::Test
   include Anything
@@ -45,6 +46,13 @@ class AnythingTest < Minitest::Test
     assert_equal any_string, "foo"
 
     refute_equal any_string, 42
+  end
+
+  def test_one_of
+    animals = one_of("dog", "cat")
+
+    assert_equal animals, "dog"
+    refute_equal animals, "chair"
   end
 
   def test_string_of_length

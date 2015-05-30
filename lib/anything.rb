@@ -8,6 +8,7 @@
 # `test_why_someone_would_ever_use_it`
 
 require "anything/version"
+require "delegate"
 require "set"
 require "date"
 
@@ -107,6 +108,24 @@ module Anything
   end
   def any_string
     AnyString.new
+  end
+
+  class OneOf < Anything
+    def initialize(*values)
+      super
+      @values = values
+    end
+
+    def ==(o)
+      @values.include?(o)
+    end
+
+    def inspect
+      "#<OneOf #{@values.map(&:inspect).join(" ")}>"
+    end
+  end
+  def one_of(*values)
+    OneOf.new(*values)
   end
 
   class StringOfLength < AnyString
