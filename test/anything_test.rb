@@ -61,6 +61,14 @@ class AnythingTest < Minitest::Test
     refute_equal string_of_length(5), "foo"
   end
 
+  def test_string_matching
+    x = string_matching(/foo/)
+    assert_equal x, "foo"
+    assert_equal x, "foo foo"
+
+    refute_equal x, "bar"
+  end
+
   def test_upcase_string
     assert_equal upcase_string, "FOO"
 

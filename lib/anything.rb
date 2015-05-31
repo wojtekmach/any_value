@@ -146,6 +146,24 @@ module Anything
     StringOfLength.new(expected_length)
   end
 
+  class StringMatching < AnyString
+    def initialize(pattern)
+      super
+      @pattern = pattern
+    end
+
+    def ==(o)
+      super && o =~ @pattern
+    end
+
+    def inspect
+      "#<StringMatching #@pattern>"
+    end
+  end
+  def string_matching(pattern)
+    StringMatching.new(pattern)
+  end
+
   # It's the same as:
   #
   # sorted_array = array_of(increasing)
