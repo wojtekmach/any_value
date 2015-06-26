@@ -11,6 +11,7 @@ require "anything/version"
 require "delegate"
 require "set"
 require "date"
+require "uri"
 
 module Anything
   class Anything
@@ -270,5 +271,15 @@ module Anything
   end
   def any_date
     AnyDate.new
+  end
+
+  class AnyHTTPURI < Anything
+    def ==(o)
+      uri = URI(o)
+      uri.is_a?(URI::HTTP)
+    end
+  end
+  def any_http_uri
+    AnyHTTPURI.new
   end
 end

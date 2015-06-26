@@ -160,5 +160,10 @@ class AnythingTest < Minitest::Test
     assert_equal any_date, Date.new
     refute_equal any_date, 42
   end
+
+  def test_any_http_uri
+    assert_equal any_http_uri, "https://github.com"
+    refute_equal any_http_uri, "bad"
+  end
 end
 
