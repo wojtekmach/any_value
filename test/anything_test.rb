@@ -84,12 +84,7 @@ class AnythingTest < Minitest::Test
   end
 
   def test_composition_composition
-    starts_with_n = Class.new(AnyString) {
-      def ==(o)
-        o.start_with?("n") || o.start_with?("N")
-      end
-    }.new
-
+    starts_with_n = string_matching(/\A[nN]/)
     acronym = string_of_length(3) ^ upcase_string ^ starts_with_n
 
     assert_equal acronym, "NBA"
