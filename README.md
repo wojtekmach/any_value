@@ -4,11 +4,11 @@
 
 AnyValue is a collection of helper methods like: `anything`, `any_number`, `any_string` that is useful for testing nested data structures (like arrays or hashes) when you care more about some particular elements and the "shape" of the data, than about the entire data structure.
 
-So, instead of either:
-
-* Asserting all elements, even the attributes you don't really care about (ids, created_at fields etc)
+**without** this gem:
 
 ```ruby
+# Asserting all elements, even the attributes you don't really care about (ids, created_at fields etc)
+
 def test_create
   item1 = Item.create!(name: "Item 1")
   item2 = Item.create!(name: "Item 2")
@@ -20,13 +20,9 @@ def test_create
     {"id" => item2.id, "name" => "Item 2"},
   ], JSON(response.body)
 end
-```
 
-or
+# Extracting out subset of attributes you care about:
 
-* Extracting out subset of attributes you care about:
-
-```ruby
 def test_create
   item1 = Item.create!(name: "Item 1")
   item2 = Item.create!(name: "Item 2")
@@ -39,7 +35,7 @@ def test_create
 end
 ```
 
-You can do this:
+**with** this gem:
 
 ```ruby
 def test_create
