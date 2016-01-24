@@ -1,21 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'anything/version'
+require "any_value/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "anything"
-  spec.version       = Anything::VERSION
+  spec.name          = "any_value"
+  spec.version       = AnyValue::VERSION
   spec.authors       = ["Wojtek Mach"]
   spec.email         = ["wojtek@wojtekmach.pl"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
-
   spec.summary       = %q{Helper objects for testing nested data structures}
   spec.description   = spec.summary
-  spec.homepage      = "https://github.com/wojtekmach/anything"
+  spec.homepage      = "https://github.com/wojtekmach/any_value"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

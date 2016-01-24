@@ -1,8 +1,8 @@
 require "test_helper"
 require "securerandom"
 
-class AnythingTest < Minitest::Test
-  include Anything
+class AnyValueTest < Minitest::Test
+  include AnyValue
 
   def test_why_someone_would_ever_use_it
     people = [

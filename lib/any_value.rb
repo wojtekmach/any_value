@@ -7,13 +7,13 @@
 # Here, I want to try something different. See:
 # `test_why_someone_would_ever_use_it`
 
-require "anything/version"
+require "any_value/version"
 require "delegate"
 require "set"
 require "date"
 require "uri"
 
-module Anything
+module AnyValue
   class Anything
     def initialize(*args)
       @args = args
