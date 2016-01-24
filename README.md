@@ -1,6 +1,6 @@
 # AnyValue
 
-[![Build Status](https://travis-ci.org/wojtekmach/anything.svg)](https://travis-ci.org/wojtekmach/anything)
+[![Build Status](https://travis-ci.org/wojtekmach/any_value.svg)](https://travis-ci.org/wojtekmach/any_value)
 
 AnyValue is a collection of helper methods like: `anything`, `any_number`, `any_string` that is useful for testing nested data structures (like arrays or hashes) when you care more about some particular elements and the "shape" of the data, than about the entire data structure.
 
@@ -62,7 +62,7 @@ All you have to do is to include `AnyValue` module to your program/test/whatever
 Example:
 
 ```ruby
-require 'anything'
+require 'any_value'
 require 'minitest/autorun'
 
 class Test < Minitest::Test
