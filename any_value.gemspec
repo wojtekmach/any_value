@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Wojtek Mach"]
   spec.email         = ["wojtek@wojtekmach.pl"]
 
-  spec.summary       = %q{Helper objects for testing nested data structures}
+  spec.summary       = %q{Collection of helper methods for testing "shape" of the data}
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/wojtekmach/any_value"
   spec.license       = "MIT"
