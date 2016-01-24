@@ -10,6 +10,7 @@
 require "any_value/version"
 require "delegate"
 require "set"
+require "time"
 require "date"
 require "uri"
 
@@ -264,6 +265,18 @@ module AnyValue
     AnyTime.new
   end
 
+  class AnyTimeString < Anything
+    def ==(o)
+      Time.parse(o)
+      true
+    rescue ArgumentError
+      false
+    end
+  end
+  def any_time_string
+    AnyTimeString.new
+  end
+
   class AnyDate < Anything
     def ==(o)
       o.is_a?(Date)
@@ -271,6 +284,30 @@ module AnyValue
   end
   def any_date
     AnyDate.new
+  end
+
+  class AnyDateString < Anything
+    def ==(o)
+      Date.parse(o)
+      true
+    rescue ArgumentError
+      false
+    end
+  end
+  def any_date_string
+    AnyDateString.new
+  end
+
+  class AnyDateTimeString < Anything
+    def ==(o)
+      DateTime.parse(o)
+      true
+    rescue ArgumentError
+      false
+    end
+  end
+  def any_datetime_string
+    AnyDateTimeString.new
   end
 
   class AnyHTTPURI < Anything

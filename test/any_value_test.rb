@@ -151,9 +151,26 @@ class AnyValueTest < Minitest::Test
     refute_equal any_time, 42
   end
 
+  def test_any_time_string
+    assert_equal any_time_string, Time.now.to_s
+    assert_equal any_time_string, "10:00"
+    refute_equal any_time_string, "bad"
+  end
+
   def test_any_date
     assert_equal any_date, Date.new
     refute_equal any_date, 42
+  end
+
+  def test_any_date_string
+    assert_equal any_date_string, Date.new.to_s
+    refute_equal any_date_string, "bad"
+  end
+
+  def test_any_datetime_string
+    assert_equal any_datetime_string, DateTime.new.to_s
+    assert_equal any_datetime_string, "10:00"
+    refute_equal any_datetime_string, "bad"
   end
 
   def test_any_http_uri
